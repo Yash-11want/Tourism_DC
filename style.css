@@ -1,0 +1,224 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
+    overflow-x: hidden;
+}
+
+/* Animated Background Styles */
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: radial-gradient(circle, #1e3c72 20%, transparent 20%), radial-gradient(circle, #2a5298 20%, transparent 20%);
+    background-size: 10% 10%;
+    animation: backgroundAnimation 10s linear infinite;
+    z-index: -1;
+    opacity: 0.05;
+}
+
+@keyframes backgroundAnimation {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-5%, -5%); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 3em 1em;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 2.8em;
+    letter-spacing: 2px;
+    margin-bottom: 0.3em;
+}
+
+header p {
+    font-size: 1.3em;
+    opacity: 0.9;
+}
+
+/* Main Content Styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2em;
+    background-color: #ffffff;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transform: translateZ(0);
+}
+
+/* Search and Select Section */
+.search-section {
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+.search-container {
+    margin-bottom: 1.5em;
+}
+
+#searchInput {
+    width: 100%;
+    max-width: 500px;
+    padding: 0.8em 1.2em;
+    font-size: 1.1em;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    perspective: 500px;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: #2a5298;
+    box-shadow: 0 4px 10px rgba(42, 82, 152, 0.2);
+    transform: scale(1.02);
+}
+
+/* Larger Font and Custom Color for State Select Dropdown */
+select {
+    padding: 0.8em 1.2em;
+    font-size: 1.2em; /* Increased font size */
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    color: #1e3c72; /* Matches header background color */
+    font-weight: bold;
+    background-color: #f5f7fa;
+}
+
+/* Buttons with 3D Effect */
+button {
+    padding: 0.8em 1.2em;
+    font-size: 1em;
+    border-radius: 5px;
+    background-color: #2a5298;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #1e3c72;
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(30, 60, 114, 0.3);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* Tourist Spots Grid */
+.tourist-spots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2em;
+    padding: 1em;
+}
+
+.spot-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transform-style: preserve-3d;
+    transform: perspective(1000px) translateZ(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.spot-card:hover {
+    transform: rotateY(5deg) rotateX(5deg) translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.state-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(42, 82, 152, 0.9);
+    color: white;
+    padding: 0.3em 0.8em;
+    border-radius: 15px;
+    font-size: 0.8em;
+}
+
+.spot-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transform: translateZ(0);
+    transition: transform 0.3s ease;
+}
+
+.spot-card:hover .spot-image {
+    transform: scale(1.05) translateZ(20px);
+}
+
+/* Smaller Font for Tourist Spot Names */
+.spot-name {
+    font-size: 1.2em; /* Smaller font for place names */
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.spot-description {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.spot-details {
+    color: #666;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.detail-item {
+    margin-bottom: 8px;
+}
+
+.detail-item strong {
+    color: #333;
+    font-weight: 600;
+}
+
+/* View Details Button 3D */
+.view-details-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 0.5em 1em;
+    color: #2a5298;
+    font-weight: 600;
+    background-color: transparent;
+    border: 2px solid #2a5298;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.view-details-button:hover {
+    background-color: #2a5298;
+    color: white;
+    transform: translateY(-5px) scale(1.05);
+}

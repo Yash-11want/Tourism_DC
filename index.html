@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India Tourism Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Explore India's Tourist Spots</h1>
+        <p>Discover the beauty and culture of incredible India</p>
+    </header>
+    
+    <main>
+        <section class="search-section">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for tourist spots...">
+            </div>
+            
+            <div class="select-container">
+                <label for="stateSelect">Or choose a state:</label>
+                <select id="stateSelect">
+                    <option value="">--Select a State--</option>
+                    <!-- States -->
+                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Tamil Nadu">Tamil Nadu</option>
+                    <option value="Telangana">Telangana</option>
+                    <option value="Uttarakhand">Uttarakhand</option>
+                </select>
+                
+                <button onclick="displayTouristSpots()">Show Tourist Spots</button>
+            </div>
+        </section>
+
+        <section id="touristSpots" class="tourist-spots-grid">
+            <!-- Tourist spots will dynamically populate here using JavaScript -->
+            <p class="initial-message">Search or select a state to explore tourist destinations!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 India Tourism Guide | Discover the beauty of India</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
